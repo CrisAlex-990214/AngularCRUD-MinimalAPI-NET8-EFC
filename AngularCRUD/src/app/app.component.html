@@ -1,0 +1,21 @@
+<h2> Products </h2>
+
+<li>
+  @for (item of products$ | async; track $index) {
+    <ul> {{ item.name }} / {{ item.price | currency }}</ul>
+  }
+</li>
+
+<div>
+  <label for="id"> Id </label> <br> 
+  <input type="number" id="id" [(ngModel)]="id"/> <br>
+  <label for="name"> Name </label> <br> 
+  <input type="text" id="name" [(ngModel)]="name"/> <br>
+  <label for="price"> Price </label> <br> 
+  <input type="price" id="price" [(ngModel)]="price"/> <br>
+
+  <button style="background-color: greenyellow;" (click)="add()"> Add </button>
+  <button style="background-color: salmon;" (click)="update()"> Update </button>
+  <button style="background-color: red;" (click)="delete()"> Delete </button>
+  <button style="background-color: blue;" (click)="getById()"> GetById </button>
+</div>
